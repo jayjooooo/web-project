@@ -55,7 +55,21 @@
   background-size: cover;
 }
 
+.bg2 {
+  background-image: url(/src/view/8.jpg);
+  background-size: cover;
+  height: 100vh;
+}
+
 .margin {
   margin-left: 34.5px;
   margin-right: 34.5px;
+}
+
+.mb {
+  margin-right: 53rem;
+}
+
+.width {
+  width: 70rem;
 }

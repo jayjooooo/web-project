@@ -1,11 +1,10 @@
-import rendy from "./rendy.jpg";
-import fajar from "./fajar.jpg";
+import foto6 from "./6.jpg";
 function about() {
   return (
     <div className="Poppins">
       <h1 className="text-3xl font-semibold mt-9">About We</h1>
       <div className="text-lg flex mx-32 my-10">
-        <img src={rendy} alt="" className="w-60 rounded-full" />
+        <img src="" alt="" className="w-60 rounded-full" />
 
         <p className="ml-16 text-justify">
           There are many variations of passages of Lorem Ipsum available, but
@@ -34,7 +33,7 @@ function about() {
           a handful of model sentence structures, to generate Lorem Ipsum which
           looks reasonable.
         </p>
-        <img src={fajar} alt="" className="w-60 rounded-full" />
+        <img src="" alt="" className="w-60 rounded-full" />
       </div>
     </div>
   );

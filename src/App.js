@@ -3,6 +3,7 @@ import "./App.css";
 import Home from "./view/home";
 import About from "./view/about";
 import Contact from "./view/contact";
+import Akademik from "./view/academic";
 import _header from "./components/header";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<Home />}></Route>
         <Route path="/about" element={<About />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
+        <Route path="/akademik" element={<Akademik />}></Route>
       </Routes>
     </div>
   );

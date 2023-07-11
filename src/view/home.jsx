@@ -1,10 +1,10 @@
 import lomba1 from "./7.jpg";
 import lomba2 from "./6.jpg";
-import fajar from "./fajar.jpg";
 import msu from "./1.png";
 import jgu from "./2.png";
 import ui from "./3.png";
 import logo_pnj from ".././view/4.png";
+import foto6 from "./6.jpg";
 
 function home() {
   return (
@@ -22,7 +22,7 @@ function home() {
         </div>
       </div>
 
-      <div className="text-3xl bg-gray-500 font-extrabold py-14 px-14">
+      <div className="text-3xl  bg-gray-500 font-extrabold py-14 px-14">
         The PNJ Departement of IT Engineering’s mission is to educate the next
         generation of IT engineering leaders, to create new knowledge, and to
         serve society.
@@ -62,13 +62,13 @@ function home() {
         </div>
         <div className="flex justify-between items-center mx-24 pt-10 py-12">
           <div className="max-w max">
-            <img src={fajar} alt="" className="w-56 rounded-3xl" />
+            <img src={foto6} alt="" className="w-56 rounded-3xl" />
           </div>
           <div className="max-w max">
-            <img src={fajar} alt="" className="w-56 rounded-3xl" />
+            <img src={foto6} alt="" className="w-56 rounded-3xl" />
           </div>
           <div className="max-w max">
-            <img src={fajar} alt="" className="w-56 rounded-3xl" />
+            <img src={foto6} alt="" className="w-56 rounded-3xl" />
           </div>
         </div>
       </div>

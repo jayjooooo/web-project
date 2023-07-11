@@ -1,6 +1,7 @@
 import Home from ".././view/home";
 import about from ".././view/about";
 import contact from ".././view/contact";
+import akademik from ".././view/academic";
 import logo_pnj from ".././view/4.png";
 
 function header() {
@@ -11,18 +12,18 @@ function header() {
           <img src={logo_pnj} alt="" className="w-20 rounded-full" />
         </div>
         <a className="text-2xl mr-48 text-left">
-          Department of <br/> Informatics and Computer engineering
+          Department of <br /> Informatics and Computer engineering
         </a>
         <div className="inline-block text-xl">
           <a
-            className="mx-4 hover:text-pink-500 transition-colors duration-300"
+            className="mx-4 hover:text-blue-700 transition-colors duration-300"
             href="/"
           >
             Home
           </a>
           <a
-            className="mx-4 hover:text-pink-500 transition-colors duration-300"
-            href="/Academic"
+            className="mx-4 hover:text-blue-700 transition-colors duration-300"
+            href="/akademik"
           >
             Academic
           </a>
@@ -33,7 +34,7 @@ function header() {
             About Us
           </a>
           <a
-            className="mx-4 hover:text-pink-500 transition-colors duration-300"
+            className="mx-4 hover:text-blue-700 transition-colors duration-300"
             href="/contact"
           >
             Contact
