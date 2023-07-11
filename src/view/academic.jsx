@@ -1,12 +1,17 @@
-import logo_pnj from ".././view/4.png";
-
+import logo_pnj from "./4.png";
+import foto9 from "./9.jpg";
+import foto10 from "./10.jpg";
+import foto11 from "./11.jpg";
+import foto12 from "./12.jpg";
+import foto13 from "./13.jpg";
 function academic() {
   return (
     <div className="Poppins">
-      <div className="bg2 ">
-        <div className="">
+      <div className="bg2 relative ">
+        <div className="absolute bottom-5 left-5 text-white text-3xl ml-24 text-left pb-6">
           <h1 className="">
-            Kehidupan Akademik Departemen Teknik Informatika dan Komputer PNJ
+            Kehidupan Akademik
+            <br /> Departemen Teknik Informatika dan Komputer PNJ
           </h1>
         </div>
       </div>
@@ -131,6 +136,36 @@ function academic() {
               dan studi independent melalui program MBKM yang dimulai pada
               semester 5
             </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="mb-16">
+        <div>
+          <h1 className="text-xl font-bold text-blue-600 mb-4">ORGANISASI</h1>
+        </div>
+        <div className="flex justify-center items-center">
+          <div className="w-44 mx-5">
+            <img src={foto10} alt="" />
+          </div>
+          <div className="w-44 mx-5">
+            <img src={foto13} alt="" />
+          </div>
+          <div className="w-36 mx-5">
+            <img src={foto9} alt="" />
+          </div>
+        </div>
+        <div className="mt-10">
+          <h1 className="text-xl font-bold text-blue-600 mb-4">
+            KELOMPOK STUDI MAHASISWA
+          </h1>
+        </div>
+        <div className="flex justify-center items-center">
+          <div className="w-36 mx-5">
+            <img src={foto11} alt="" />
+          </div>
+          <div className="w-44 mx-5">
+            <img src={foto12} alt="" />
           </div>
         </div>
       </div>
