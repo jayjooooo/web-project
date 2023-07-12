@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-pascal-case */
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./view/home";

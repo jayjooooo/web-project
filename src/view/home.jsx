@@ -1,20 +1,58 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable react-hooks/rules-of-hooks */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import React, { useEffect, useState } from "react";
+import classNames from "classnames";
 import lomba1 from "./7.jpg";
 import lomba2 from "./6.jpg";
 import msu from "./1.png";
 import jgu from "./2.png";
 import ui from "./3.png";
 import logo_pnj from ".././view/4.png";
-import foto6 from "./6.jpg";
 
 function home() {
+  const texts = [
+    "TIK PNJ IS WHERE THE IT ENGINEER PRACTITIONERS IS INVENTED ! 👨‍💻",
+  ];
+  const speed = 130; // Kecepatan pengetikan dalam milidetik
+
+  const [index, setIndex] = useState(0);
+  const [text, setText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const currentIndex = index % texts.length;
+      const currentText = texts[currentIndex];
+
+      if (!isDeleting) {
+        setText((prevText) => prevText + currentText.charAt(text.length));
+        if (text === currentText) {
+          setIsDeleting(true);
+          clearInterval(interval);
+          setTimeout(() => setIsDeleting(false), speed);
+        }
+      } else {
+        if (text === "") {
+          setIndex((prevIndex) => prevIndex + 1);
+          setIsDeleting(false);
+          clearInterval(interval);
+        }
+      }
+    }, speed);
+
+    return () => clearInterval(interval);
+  }, [index, text, isDeleting, speed, texts]);
+
   return (
     <div className="Poppins text-white bg-gray-100">
-      <div className="bg">
+      <div className="bg bg-fixed bg-top">
         <div className="font-extrabold text-4xl py-80">
-          <div className="bg-blue-950 bg-opacity-60 py-5 mx-24">
-            TIK PNJ IS WHERE <br /> THE IT ENGINEER PRACTITIONERS IS INVENTED
+          <div className="bg-blue-950 bg-opacity-60 py-5 mx-24 rounded-md backdrop-blur-md border-l-4 border-r-4 border-white">
+            {text}
+            <span className={classNames("opacity-50", "animate-blink")}>|</span>
           </div>
-          <div className="text-2xl bg-gray-400 bg-opacity-60 mx-48 py-10">
+          <div className="text-2xl bg-gray-400 bg-opacity-60 mx-48 py-10 rounded-md backdrop-blur-md border-b-4 border-white text-blue-950">
             Dengan Pendidikan Vokasional, Mahasiswa TIK <br />
             Belajar langsung Dunia Industri IT sehingga Tercipta Lulusan Siap
             Kerja
@@ -22,27 +60,27 @@ function home() {
         </div>
       </div>
 
-      <div className="text-3xl  bg-gray-500 font-extrabold py-14 px-14">
+      <div className="text-xl bg-gray-500 font-extrabold py-14 px-14 backdrop-blur-md box-border">
         The PNJ Departement of IT Engineering’s mission is to educate the next
         generation of IT engineering leaders, to create new knowledge, and to
         serve society.
       </div>
 
-      <div className="mx-48 flex justify-center">
-        <div className="">
+      <div className="mx-48 my-10 flex justify-center rounded-l-md shadow-md shadow-blue-500">
+        <div className="p-10">
           <div className=" bg-white flex justify-between items-center margin">
             <div className="">
               <img src={lomba1} alt="" className="max-w-md" />
             </div>
             <div className="mx-3">
-              <a href="" className="text-blue-500 underline text-xl">
+              <a href="#" className="text-blue-500 underline text-xl">
                 Mahasiswa Prodi TMJ Lakukan Studi Industri ke XL Axiata
               </a>
             </div>
           </div>
 
-          <div className="bg-white flex justify-between items-center margin">
-            <div className="mx-2">
+          <div className="bg-white flex justify-between items-center margin  ">
+            <div className="mx-3">
               <a href="" className="text-blue-500 underline text-xl">
                 Mahasiswa TIK PNJ juara 1 Perancangan Bisnis KMIPN 2019
               </a>
@@ -54,21 +92,40 @@ function home() {
         </div>
       </div>
 
-      <div className="bg-blue-950 mx-20 mt-24">
+      <div className="bg-blue-950 mx-20 my-24 rounded-md shadow-md shadow-black border-x-4 border-white">
         <div className="ml-10 py-6">
-          <h1 className="underline flex text-left text-2xl">
-            AGENDA YANG AKAN DATANG
-          </h1>
+          <h1 className="underline flex text-left text-2xl">TIK NEWSLATTER</h1>
         </div>
         <div className="flex justify-between items-center mx-24 pt-10 py-12">
-          <div className="max-w max">
-            <img src={foto6} alt="" className="w-56 rounded-3xl" />
+          <div className="max-w max ">
+            <div className="group csfest rounded-3xl w-56 border-2 h-56 bg-cover bg-bottom overflow-hidden relative">
+              <div className="group-hover:bg-gradient-to-t from-black to-transparent w-full h-full  transition-all"></div>
+              <div className="">
+                <p className="group-hover:text-white absolute bottom-2 p-2 box-border text-sm text-transparent">
+                  CSFest berhasil satukan mahasiswa baru TIK 2022
+                </p>
+              </div>
+            </div>
           </div>
-          <div className="max-w max">
-            <img src={foto6} alt="" className="w-56 rounded-3xl" />
+          <div className="max-w max ">
+            <div className="group csfest rounded-3xl w-56 border-2 h-56 bg-cover bg-bottom overflow-hidden relative">
+              <div className="group-hover:bg-gradient-to-t from-black to-transparent w-full h-full  transition-all"></div>
+              <div className="">
+                <p className="group-hover:text-white absolute bottom-2 p-2 box-border text-sm text-transparent">
+                  CSFest berhasil satukan mahasiswa baru TIK 2022
+                </p>
+              </div>
+            </div>
           </div>
-          <div className="max-w max">
-            <img src={foto6} alt="" className="w-56 rounded-3xl" />
+          <div className="max-w max ">
+            <div className="group csfest rounded-3xl w-56 border-2 h-56 bg-cover bg-bottom overflow-hidden relative">
+              <div className="group-hover:bg-gradient-to-t from-black to-transparent w-full h-full  transition-all"></div>
+              <div className="">
+                <p className="group-hover:text-white absolute bottom-2 p-2 box-border text-sm text-transparent">
+                  CSFest berhasil satukan mahasiswa baru TIK 2022
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -93,40 +150,67 @@ function home() {
         </div>
       </div>
 
-      <div className="bg-zinc-800 py-16">
-        <div className="flex justify-between items-center mx-28">
-          <div className="flex justify-between items-center">
-            <div className="mx-3">
-              <img src={logo_pnj} alt="" className="w-28" />
-            </div>
-            <div className="mx-3">
-              <h1 className="text-left text-xl font-bold">
-                Department of <br /> Informatics and Computer <br />
-                engineering
-              </h1>
-            </div>
-          </div>
+      <div className="Footer text-white">
+        <div>
+          <div className="bg-zinc-800 pt-5 mx-auto ">
+            <div className="flex justify-between items-center mx-20 mb-10">
+              <div className="flex justify-between items-center">
+                <div className="ml-[-20px]">
+                  <img src={logo_pnj} alt="" className="w-28" />
+                </div>
+                <div className="mx-3">
+                  <h1 className="text-left text-l font-based">
+                    Departemen <br /> Teknik Informatika dan <br />
+                    Komputer
+                  </h1>
+                </div>
+              </div>
 
-          <div className="text-left">
-            <div>
-              <h1 className="text-xl font-bold">Akademik</h1>
-            </div>
-            <ul>
-              <li>Sarjana Terapan Teknik Informatika</li>
-              <li>Sarjana Terapan Teknik Multimedia Digital</li>
-              <li>Sarjana Terapan Teknik Multimedia Digital dan Jaringan</li>
-              <li>D1 Teknik Komputer dan Jaringan</li>
-            </ul>
-          </div>
+              <div className="text-left">
+                <div>
+                  <h1 className="text-l font-based mb-2 border-b-2 border-white">
+                    Akademik
+                  </h1>
+                </div>
+                <ul className="font-based">
+                  <li className="hover:underline transition-all">
+                    Sarjana Terapan Teknik Informatika
+                  </li>
+                  <li>Sarjana Terapan Teknik Multimedia Digital</li>
+                  <li className="hover:underline transition-all">
+                    Sarjana Terapan Teknik Multimedia Digital dan Jaringan
+                  </li>
+                  <li className="hover:underline transition-all">
+                    D1 Teknik Komputer dan Jaringan
+                  </li>
+                </ul>
+              </div>
 
-          <div className="text-left">
-            <div className="text-xl font-bold">Akses Cepat</div>
-            <ul>
-              <li>WEweb Utama PNJ</li>
-              <li>Siak Mahasiswa</li>
-              <li>E-Learning</li>
-              <li>Gudang Ilmu TIK</li>
-            </ul>
+              <div className="text-left">
+                <div className="text-l fon-based mb-2 border-b-2 border-white">
+                  Akses Cepat
+                </div>
+                <ul className="font-based">
+                  <li className="hover:underline transition-all">
+                    Web Utama PNJ
+                  </li>
+                  <li className="hover:underline transition-all">
+                    Siak Mahasiswa
+                  </li>
+                  <li className="hover:underline transition-all">E-Learning</li>
+                  <li className="hover:underline transition-all">
+                    Gudang Ilmu TIK
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="mt-4 text-center text-sm">
+              <hr className="text-slate-800" />
+              <p className="p-2">
+                Developed By Randy & Fajar, Calon Junior Web Devlopment 2022 -
+                2026
+              </p>
+            </div>
           </div>
         </div>
       </div>
